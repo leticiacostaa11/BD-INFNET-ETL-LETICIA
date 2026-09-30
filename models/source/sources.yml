@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: consumo
+    database: projeto-bi-506418
+    schema: olist_datawarehouse
+
+    tables:
+    - name: dim_vendedor
+    - name: dim_cliente
+    - name: dim_produto
+    - name: dim_pedido
+    - name: fato_itens_pedido
+
+
