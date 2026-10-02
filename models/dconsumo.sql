@@ -1,2 +1,2 @@
 SELECT * 
-FROM `projeto-bi-506418.olist_datawarehouse.fato_itens_pedido`
+FROM `projeto-bi-506418.olist_datawarehouse.dim_vendedor`
