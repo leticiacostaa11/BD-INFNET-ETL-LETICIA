@@ -1,11 +1,13 @@
 SELECT
     sk_produto,
     product_id as produto_id,
-    UPPER(
-        REPLACE(product_category_name, '_', ' ')
+    COALESCE(
+        NULLIF(TRIM(UPPER(REPLACE(product_category_name, '_', ' '))), ''),
+        'SEM CATEGORIA'
     ) AS categoria,
-    UPPER(
-        REPLACE(product_category_name_english, '_', ' ')
+    COALESCE(
+        NULLIF(TRIM(UPPER(REPLACE(product_category_name_english, '_', ' '))), ''),
+        'UNCATEGORIZED'
     ) AS categoria_ingles,
     SAFE_CAST(product_name_lenght AS INT64) AS caracteres_nome,
     SAFE_CAST(product_description_lenght AS INT64) AS caracteres_descricao,

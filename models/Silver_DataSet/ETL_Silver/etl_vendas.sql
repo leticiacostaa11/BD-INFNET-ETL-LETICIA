@@ -16,6 +16,8 @@ SELECT
     ip.valor_frete,
     ROUND(ip.valor_item * {{ var('taxa_imposto') }}, 2) AS valor_imposto,
     ROUND(ip.valor_item * (1 + {{ var('taxa_imposto') }}) + ip.valor_frete, 2) AS valor_total_item,
+    p.pedido_data_hora,
+    p.entrega_cliente,
     DATE_DIFF(DATE(p.entrega_cliente), DATE(p.pedido_data_hora), DAY) AS dias_para_entrega,
     DATE_DIFF(DATE(p.entrega_cliente), DATE(p.entrega_prevista), DAY) AS dias_atraso,
     CASE
