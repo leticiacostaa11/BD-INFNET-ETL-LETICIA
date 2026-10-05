@@ -37,6 +37,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   my_new_project:
-    # Applies to all files under models/example/
-    example:
+    Silver_DataSet:
+      Staging_Silver:
+        +materialized: view
+        +schema: silver_staging
+      ETL_Silver:
+        +materialized: table
+        +schema: silver_etl
+    Gold_DataSet:
       +materialized: table
+      +schema: gold
+vars:
+  taxa_imposto: 0.10

@@ -1,0 +1,66 @@
+version: 2
+
+models:
+
+  - name: etl_vendas
+    tests:
+      - not_null_all_columns
+      - unique_all_columns
+    columns:
+      - name: sk_item_pedido
+        tests:
+          - unique_especific_columns
+
+
+  - name: stg_avaliacao
+    tests:
+      - not_null_all_columns
+      - unique_all_columns
+    columns:
+      - name: avaliacao_id
+        tests:
+          - unique_especific_columns
+
+  - name: stg_cliente
+    tests:
+      - not_null_all_columns
+      - unique_all_columns
+    columns:
+      - name: cliente_id
+        tests:
+          - unique_especific_columns
+
+  - name: stg_itens_pedido
+    tests:
+      - not_null_all_columns
+      - unique_all_columns
+    columns:
+      - name: sk_item_pedido
+        tests:
+          - unique_especific_columns
+
+  - name: stg_pedido
+    tests:
+      - not_null_all_columns
+    columns:
+      - name: pedido_id
+        tests:
+          - unique_especific_columns
+
+  - name: stg_produto
+    tests:
+      - not_null_all_columns
+      - unique_all_columns
+    columns:
+      - name: produto_id
+        tests:
+          - unique_especific_columns
+
+  - name: stg_vendedor
+    tests:
+      - not_null_all_columns
+      - unique_all_columns
+    columns:
+      - name: vendedor_id
+        tests:
+          - unique_especific_columns

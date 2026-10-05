@@ -7,4 +7,4 @@ SELECT
     DATETIME(order_delivered_carrier_date) AS entrega_transportadora,
     DATETIME(order_delivered_customer_date) AS entrega_cliente,
     DATETIME(order_estimated_delivery_date) AS entrega_prevista
-FROM {{ source('consumo', 'dim_pedido') }}
+FROM {{ source('datawarehouse', 'dim_pedido') }}

@@ -9,4 +9,4 @@ customer_unique_id as cliente_identificador,
         )
     ) AS cliente_cidade,
 UPPER(TRIM(customer_state)) as cliente_estado
-FROM {{source('consumo','dim_cliente')}}
+FROM {{source('datawarehouse','dim_cliente')}}

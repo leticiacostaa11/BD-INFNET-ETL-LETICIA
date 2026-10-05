@@ -8,4 +8,4 @@ SELECT
     DATETIME(shipping_limit_date) as data_limite_envio,
     CAST (price AS NUMERIC) as valor_item,
     CAST (freight_value AS NUMERIC) as valor_frete
-FROM {{source('consumo','fato_itens_pedido')}}
+FROM {{source('datawarehouse','fato_itens_pedido')}}

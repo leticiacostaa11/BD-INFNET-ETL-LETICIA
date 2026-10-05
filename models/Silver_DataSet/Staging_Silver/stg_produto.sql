@@ -17,7 +17,7 @@ SELECT
     SAFE_CAST(product_length_cm AS NUMERIC) AS comprimento_produto_cm,
     SAFE_CAST(product_height_cm AS NUMERIC) AS altura_produto_cm,
     SAFE_CAST(product_width_cm AS NUMERIC) AS largura_produto_cm
-FROM {{source('consumo','dim_produto')}}
+FROM {{source('datawarehouse','dim_produto')}}
 
 
     

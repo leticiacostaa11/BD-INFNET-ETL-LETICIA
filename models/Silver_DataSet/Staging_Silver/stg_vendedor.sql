@@ -6,4 +6,4 @@ SELECT
         TRIM(
             REGEXP_REPLACE(seller_city, r'\s*/.*$', ''))) as vendedor_cidade,
     UPPER(TRIM(seller_state)) as vendedor_estado
-FROM {{source('consumo','dim_vendedor')}}
+FROM {{source('datawarehouse','dim_vendedor')}}
