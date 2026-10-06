@@ -9,8 +9,14 @@ SELECT
         NULLIF(TRIM(UPPER(REPLACE(product_category_name_english, '_', ' '))), ''),
         'UNCATEGORIZED'
     ) AS categoria_ingles,
-    SAFE_CAST(product_name_lenght AS INT64) AS caracteres_nome,
-    SAFE_CAST(product_description_lenght AS INT64) AS caracteres_descricao,
+    COALESCE(
+        SAFE_CAST(product_name_lenght AS INT64),
+        0
+    ) AS caracteres_nome,
+    COALESCE(
+    SAFE_CAST(product_description_lenght AS INT64),
+    0
+    ) AS caracteres_descricao,
     COALESCE(
         SAFE_CAST(product_photos_qty AS INT64),
         0

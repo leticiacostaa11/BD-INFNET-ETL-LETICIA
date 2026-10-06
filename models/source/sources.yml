@@ -12,11 +12,3 @@ sources:
     - name: dim_pedido
     - name: fato_itens_pedido
 
-  - name: base
-    database: projeto-bi-506418
-    schema: olist_base
-    tables:
-      - name: olist_order_payments_dataset
-      - name: olist_order_reviews_dataset
-      - name: olist_geolocation_dataset
-
